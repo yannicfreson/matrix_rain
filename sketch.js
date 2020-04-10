@@ -12,7 +12,7 @@ var hasDrawnMessageBox = false;
 var finished = false;
 
 function setup() {
-  console.log(message.length);
+  //console.log(message.length);
   frameRate(60);
   createCanvas(
     window.innerWidth,
@@ -40,7 +40,7 @@ function draw() {
   messageBox();
   displayMessage();
   if (hasStarted == false) {
-    console.log('start message');
+    //console.log('start message');
     constructMessage();
   }
   hasStarted = true;
@@ -115,7 +115,7 @@ function Stream() {
 }
 
 function messageBox() {
-  console.log('drawing message box');
+  //console.log('drawing message box');
   this.opacity = opacity;
   var boxX1 = (width / 8);
   var boxY1 = (height / 5);
@@ -130,19 +130,19 @@ function messageBox() {
 }
 
 function constructMessage() {
-  console.log('displaying message')
+  //console.log('displaying message')
   this.displayedMessage = displayedMessage;
 
   setTimeout(type, 7000);
 
   function type() {
-    console.log('type')
+    //console.log('type')
     nextChar();
     function nextChar() {
       this.currentCharToType = currentCharToType;
       if (currentCharToType < messageAsArray.length) {
         displayedMessage += messageAsArray[currentCharToType];
-        console.log(displayedMessage);
+        //console.log(displayedMessage);
         currentCharToType++;
       } else if (currentCharToType >= messageAsArray.length) {
         finished = true
