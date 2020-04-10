@@ -13,7 +13,7 @@ var finished = false;
 
 function setup() {
   //console.log(message.length);
-  frameRate(60);
+  frameRate(30);
   createCanvas(
     window.innerWidth,
     window.innerHeight
@@ -23,7 +23,7 @@ function setup() {
   var x = 0;
   for (var i = 0; i <= width / symbolSize; i++) {
     var stream = new Stream();
-    stream.generateSymbols(x, random(-2000, 0));
+    stream.generateSymbols(x, random(-1000, 0));
     streams.push(stream);
     x += symbolSize
   }
@@ -79,7 +79,7 @@ function Symbol(x, y, speed, first, opacity) {
 function Stream() {
   this.symbols = [];
   this.totalSymbols = round(random(5, 18));
-  this.speed = random(1, 5);
+  this.speed = random(2, 10);
 
   this.generateSymbols = function (x, y) {
     var opacity = 255;
@@ -122,8 +122,8 @@ function messageBox() {
   var boxX2 = 6 * (width / 8);
   var boxY2 = 3 * (height / 5);
 
-  if (frameCount > 180 && opacity <= 200) {
-    opacity += 5;
+  if (frameCount > 90 && opacity <= 200) {
+    opacity += 10;
   }
   fill(0, opacity);
   rect(boxX1, boxY1, boxX2, boxY2);
@@ -133,7 +133,7 @@ function constructMessage() {
   //console.log('displaying message')
   this.displayedMessage = displayedMessage;
 
-  setTimeout(type, 7000);
+  setTimeout(type, 8000);
 
   function type() {
     //console.log('type')
@@ -171,7 +171,7 @@ function displayMessage() {
   var textY2 = height - (2 * (height / 4));
 
   fill(0, 255, 80);
-  if (frameCount > 300) {
+  if (frameCount > 150) {
     text(header, headerX1, headerY1, headerX2, headerY2);
   }
   text(displayedMessage, textX1, textY1, textX2, textY2);
