@@ -2,11 +2,11 @@ var streams = [];
 var fadeInterval = 2;
 var symbolSize = 20;
 var opacity = 0;
-var message = "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+var message = "Hello Captain.\nWelcome in the Matrix.\nI hope you and your family continue to be in good health.\nFor more than 3 weeks I have been searching for a secure gateway to respond to your original transmission format.\nHere is an update on how this crew member of your battleship ‘ECO’ is dealing with this COVID-19 quarantine.\nCurrently all ‘ECO’ crew members are safe and operating from their private locations to protect themselves from the COVID-19 Sentinels.\nAll systems are performing well, although occasional sound issues may hinder proper live communication.\nRunning projects continue to be managed remotely as much as possible to enable a swift reboot after IT’s Frozen Period.\nOn a personal level, I try to stay physically in shape with daily walks, runs or bike tours.\nIn my experience, my endurance level is particularly being challenged through the social isolation from my dears for such a long time.\nI believe humans are not commonly designed to cope with that kind of circumstances.\nIn the Matrix however, every human is transformidable. \nIn the Matrix, COVID-19 is just another Agent, bound to be destroyed by an intelligent anti-virus program, executed by transformidable people.\nIt is just a matter of time. And patience.\nI look forward, with good faith, to the day we meet again IRL, Captain.\n \nNeo_K";
 var messageAsArray = message.split('');
 var displayedMessage = "";
 var currentCharToType = 0;
-var letterSize = 14;
+var letterSize = 10;
 var hasStarted = false;
 var hasDrawnMessageBox = false;
 var finished = false;
@@ -120,7 +120,7 @@ function messageBox() {
   var boxX1 = (width / 8);
   var boxY1 = (height / 5);
   var boxX2 = 6 * (width / 8);
-  var boxY2 = 3 * (height / 5);
+  var boxY2 = 3 * (height / 5) + (1 * letterSize);
 
   if (frameCount > 90 && opacity <= 200) {
     opacity += 10;
@@ -149,7 +149,7 @@ function constructMessage() {
       }
     }
     if (finished == false) {
-      setTimeout(type, round(random(20, 100)));
+      setTimeout(type, round(random(1, 2)));
     }
   }
 }
@@ -168,7 +168,7 @@ function displayMessage() {
   var textX1 = headerX1 + ((header.length - 2) * letterSize);
   var textY1 = height / 4;
   var textX2 = width - (2 * (width / 7)) - (letterSize * 4);
-  var textY2 = height - (2 * (height / 4));
+  var textY2 = height - (2 * (height / 4)) + (5 * letterSize);
 
   fill(0, 255, 80);
   if (frameCount > 150) {
