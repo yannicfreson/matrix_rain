@@ -149,7 +149,7 @@ function constructMessage() {
       }
     }
     if (finished == false) {
-      setTimeout(type, round(random(1, 90)));
+      setTimeout(type, round(random(1, 100)));
     }
   }
 }
