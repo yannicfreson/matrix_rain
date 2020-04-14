@@ -6,7 +6,7 @@ var message = "Hello Captain.\nWelcome in the Matrix.\nI hope you and your famil
 var messageAsArray = message.split('');
 var displayedMessage = "";
 var currentCharToType = 0;
-var letterSize = 10;
+var letterSize = 13;
 var hasStarted = false;
 var hasDrawnMessageBox = false;
 var finished = false;
@@ -149,7 +149,7 @@ function constructMessage() {
       }
     }
     if (finished == false) {
-      setTimeout(type, round(random(1, 100)));
+      setTimeout(type, round(random(1, 2)));
     }
   }
 }
@@ -166,7 +166,7 @@ function displayMessage() {
   var headerY2 = headerY1 + letterSize;
 
   var textX1 = headerX1 + ((header.length - 2) * letterSize);
-  var textY1 = height / 4;
+  var textY1 = (height / 4);
   var textX2 = width - (2 * (width / 7)) - (letterSize * 4);
   var textY2 = height - (2 * (height / 4)) + (5 * letterSize);
 
