@@ -2,6 +2,7 @@ var streams = [];
 var fadeInterval = 2;
 var symbolSize = 30;
 var opacity = 0;
+//var message = ""
 var messageAsArray = message.split('');
 var displayedMessage = "";
 var currentCharToType = 0;
