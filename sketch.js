@@ -1,8 +1,7 @@
 var streams = [];
 var fadeInterval = 2;
-var symbolSize = 20;
+var symbolSize = 30;
 var opacity = 0;
-var message = "Hello Captain.\nWelcome in the Matrix.\nI hope you and your family continue to be in good health.\nFor more than 3 weeks I have been searching for a secure gateway to respond to your original transmission format.\nHere is an update on how this crew member of your battleship ‘ECO’ is dealing with this COVID-19 quarantine.\nCurrently all ‘ECO’ crew members are safe and operating from their private locations to protect themselves from the COVID-19 Sentinels.\nAll systems are performing well, although occasional sound issues may hinder proper live communication.\nRunning projects continue to be managed remotely as much as possible to enable a swift reboot after IT’s Frozen Period.\nOn a personal level, I try to stay physically in shape with daily walks, runs or bike tours.\nIn my experience, my endurance level is particularly being challenged through the social isolation from my dears for such a long time.\nI believe humans are not commonly designed to cope with that kind of circumstances.\nIn the Matrix however, every human is transformidable. \nIn the Matrix, COVID-19 is just another Agent, bound to be destroyed by an intelligent anti-virus program, executed by transformidable people.\nIt is just a matter of time. And patience.\nI look forward, with good faith, to the day we meet again IRL, Captain.\n \nNeo_K";
 var messageAsArray = message.split('');
 var displayedMessage = "";
 var currentCharToType = 0;
@@ -13,7 +12,7 @@ var finished = false;
 
 function setup() {
   //console.log(message.length);
-  frameRate(30);
+  frameRate(60);
   createCanvas(
     window.innerWidth,
     window.innerHeight
@@ -23,7 +22,7 @@ function setup() {
   var x = 0;
   for (var i = 0; i <= width / symbolSize; i++) {
     var stream = new Stream();
-    stream.generateSymbols(x, random(-1000, 0));
+    stream.generateSymbols(x, random(-2000, 0));
     streams.push(stream);
     x += symbolSize
   }
@@ -37,11 +36,11 @@ function draw() {
   streams.forEach(function (stream) {
     stream.render();
   });
-  messageBox();
-  displayMessage();
+  //messageBox();
+  //displayMessage();
   if (hasStarted == false) {
     //console.log('start message');
-    constructMessage();
+    //constructMessage();
   }
   hasStarted = true;
 }
@@ -78,8 +77,8 @@ function Symbol(x, y, speed, first, opacity) {
 
 function Stream() {
   this.symbols = [];
-  this.totalSymbols = round(random(5, 18));
-  this.speed = random(2, 10);
+  this.totalSymbols = round(random(5, 34));
+  this.speed = random(2, 8);
 
   this.generateSymbols = function (x, y) {
     var opacity = 255;
@@ -114,7 +113,7 @@ function Stream() {
   }
 }
 
-function messageBox() {
+/* function messageBox() {
   //console.log('drawing message box');
   this.opacity = opacity;
   var boxX1 = (width / 8);
@@ -175,4 +174,4 @@ function displayMessage() {
     text(header, headerX1, headerY1, headerX2, headerY2);
   }
   text(displayedMessage, textX1, textY1, textX2, textY2);
-}
+} */
